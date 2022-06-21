@@ -1,0 +1,58 @@
+.container {
+  padding: 0 2rem;
+}
+
+.main {
+  min-height: 100vh;
+  padding: 4rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chatHead {
+  display: flex;
+  align-items: center;
+  width: 400px;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  padding: 10px 0;
+  border-bottom: 1px solid rgb(211, 211, 211);
+}
+
+.backArrow  {
+  user-select: none;
+  transform: rotate(90deg);
+  margin: 0 10px 0 0;
+}
+
+.chatHead p:first-child {
+  font-weight: bold;
+  position: absolute;
+  top: 2px;
+}
+
+.chatHead p:nth-child(2) {
+  font-size: 14px;
+  position: absolute;
+  top: 30px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: rgb(15, 255, 75);
+  display: inline-block;
+  border-radius: 50%;
+  margin: 0 5px 0 0;
+}
+
+.space {
+  flex: auto;
+}
+
+.threeDots {
+  user-select: none;
+}
