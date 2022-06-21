@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import ChatText from '../components/ChatText'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -11,7 +12,6 @@ export default function Home() {
         <link rel="icon" href="/chat-favicon.png" />
       </Head>
       <main className={styles.main}>
-       <div className={styles.box}>
         <div className={styles.chatHead}>
           <div className={styles.backArrow}>
           <Image 
@@ -43,7 +43,19 @@ export default function Home() {
           />
           </div> 
         </div>
-       </div>
+        <ChatText />
+        <div className={styles.inputField}>
+          <input type="text" placeholder='Type a message'/>
+          <span className={styles.space}></span>
+          <div className={styles.sendIcon}>
+            <Image
+            src="/send-icon.png"
+            width={25}
+            height={25}
+            alt="send message icon"
+            />
+          </div>
+        </div>
       </main>
     </div>
   )
