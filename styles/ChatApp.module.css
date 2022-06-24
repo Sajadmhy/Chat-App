@@ -87,3 +87,10 @@
   .sendIcon {
     user-select: none;
   }
+
+
+  .sendIcon button {
+    border-style: none;
+    background-color: transparent;
+    cursor: pointer;
+  }

@@ -3,8 +3,12 @@ import ChatText from '../components/ChatText'
 import styles from '../styles/ChatApp.module.css'
 import Link from 'next/link'
 import Head from 'next/head'
+import { Context } from '../components/GlobalStates'
+import { useContext } from 'react'
 
 export default function Home() {
+  const [setMessages] = useContext(Context);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -49,12 +53,14 @@ export default function Home() {
           <input type="text" placeholder='Type a message'/>
           <span className={styles.space}></span>
           <div className={styles.sendIcon}>
+            <button>
             <Image
             src="/send-icon.png"
             width={25}
             height={25}
             alt="send message icon"
             />
+            </button>
           </div>
         </div>
       </main>

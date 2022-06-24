@@ -1,11 +1,15 @@
 import styles from '../styles/ChatText.module.css';
 import { Data } from './Data';
 import Image from 'next/image';
+import { Context } from './GlobalStates';
+import { useContext } from 'react';
 
 export default function ChatText(props) {
+    const [messages] = useContext(Context);
+    
     return (
         <div className={styles.container}>
-            {Data.map((value , index) =>
+            {messages.map((value , index) =>
                 <>
                     <div key={index} className={value.id === props.id ? styles.myMessage : styles.hisMessage}>
                         <p>{value.text}</p>
