@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Chat Box</title>
+        <title>Chat App</title>
         <meta name="description" content="Chat-box created with next.js" />
         <link rel="icon" href="/chat-favicon.png" />
       </Head>

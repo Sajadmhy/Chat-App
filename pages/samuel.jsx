@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Chat Box</title>
+        <title>Chat App</title>
       </Head>
       <main className={styles.main}>
         <div className={styles.chatHead}>

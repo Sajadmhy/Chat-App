@@ -32,7 +32,7 @@ export default function ChatText(props) {
                     alt="profile"
                     /> 
                     </div>
-                    <div ref={messageRef} className={styles.spaceAround} style={{marginTop: value.id !== Data[index+1]?.id ? '15px' : 0}}></div>
+                    <div ref={messageRef} className={styles.spaceAround} style={{marginTop: value.id !== messages[index+1]?.id ? '15px' : 0}}></div>
                 </>
             )}
         </div>
