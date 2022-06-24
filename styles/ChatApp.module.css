@@ -87,11 +87,3 @@
   .sendIcon {
     user-select: none;
   }
-
-  
-.blackProfile {
-  width: 60px;
-  height: 60px;
-  background-color: black;
-  border-radius: 50%;
-}

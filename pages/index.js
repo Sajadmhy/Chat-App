@@ -18,7 +18,7 @@ export default function Home() {
         <Link href="/sajad">
         <div className={styles.card}>
           <Image
-          src="/profile.png"
+          src="/profile-sajad.png"
           width={60}
           height={60}
           alt="Sajad"
@@ -41,7 +41,13 @@ export default function Home() {
           </Link>
           <Link href="/samuel">
         <div className={styles.card}>
-          <div className={styles.blackProfile}></div>
+        <Image
+          src="/profile-sam.png"
+          width={60}
+          height={60}
+          alt="Sajad"
+          priority
+          />
           <div className={styles.details}>
             <p>Samuel Jr. Berokh</p>
             <p>Last Message</p>

@@ -1,11 +1,15 @@
 import Image from 'next/image'
-import ChatText from '../components/ChatTextSajad'
+import ChatText from '../components/ChatText'
 import styles from '../styles/ChatApp.module.css'
 import Link from 'next/link'
+import Head from 'next/head'
 
 export default function Home() {
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Chat Box</title>
+      </Head>
       <main className={styles.main}>
         <div className={styles.chatHead}>
           <Link href="/"><div className={styles.backArrow}>
@@ -39,7 +43,7 @@ export default function Home() {
           />
           </div> 
         </div>
-        <ChatText />
+        <ChatText id={2} picture={"/profile-sajad.png"}/>
         <div className={styles.inputField}>
           <input type="text" placeholder='Type a message'/>
           <span className={styles.space}></span>
