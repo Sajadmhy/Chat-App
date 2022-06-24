@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Head from 'next/head'
 import { Context } from '../components/GlobalStates'
 import { useContext, useState, useEffect } from 'react'
+import moment from 'moment'
 
 export default function Home() {
   const [messages, setMessages] = useContext(Context);
@@ -13,7 +14,7 @@ export default function Home() {
 
   const submitMessage = () => {
     const newInput = {
-      id , text: newMessage, date: "03:43 PM 15 Jun, 2022",
+      id , text: newMessage, date: moment().format('hh:mm A, D MMM YYYY'),
     }
     const newData = [...messages]
     newData.push(newInput);
@@ -43,7 +44,7 @@ export default function Home() {
           src="/profile-sam.png"
           width={60}
           height={60}
-          alt="Sajad"
+          alt="Samuel"
           priority
           />
           <div>

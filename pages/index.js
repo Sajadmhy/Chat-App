@@ -48,7 +48,7 @@ export default function Home() {
           src="/profile-sam.png"
           width={60}
           height={60}
-          alt="Sajad"
+          alt="Samuel"
           priority
           />
           <div className={styles.details}>

@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Head from 'next/head'
 import { Context } from '../components/GlobalStates'
 import { useContext, useEffect, useRef, useState } from 'react'
+import moment from 'moment'
 
 export default function Home() {
   const [messages, setMessages] = useContext(Context);
@@ -13,14 +14,13 @@ export default function Home() {
 
   const submitMessage = () => {
     const newInput = {
-      id , text: newMessage, date: "03:43 PM 15 Jun, 2022",
+      id , text: newMessage, date: moment().format('hh:mm A, D MMM YYYY'),
     }
     const newData = [...messages]
     newData.push(newInput);
     setMessages(newData); 
     setNewMessage("");
   }
-  
 
 
   return (
@@ -40,7 +40,7 @@ export default function Home() {
           </div>
           </Link>
           <Image
-          src="/profile.png"
+          src="/profile-sajad.png"
           height={60}
           width={60}
           alt="profile picture"
