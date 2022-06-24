@@ -4,10 +4,23 @@ import styles from '../styles/ChatApp.module.css'
 import Link from 'next/link'
 import Head from 'next/head'
 import { Context } from '../components/GlobalStates'
-import { useContext } from 'react'
+import { useContext, useState, useEffect } from 'react'
 
 export default function Home() {
-  const [setMessages] = useContext(Context);
+  const [messages, setMessages] = useContext(Context);
+  const [newMessage, setNewMessage] = useState();
+  const id = 1;
+
+  const submitMessage = () => {
+    const newInput = {
+      id , text: newMessage, date: "03:43 PM 15 Jun, 2022",
+    }
+    const newData = [...messages]
+    newData.push(newInput);
+    setMessages(newData); 
+    setNewMessage("");
+  }
+
 
   return (
     <div className={styles.container}>
@@ -48,12 +61,18 @@ export default function Home() {
           />
           </div> 
         </div>
-        <ChatText id={1} picture={"/profile-sam.png"}/>
+        <ChatText id={id} picture={"/profile-sam.png"}/>
         <div className={styles.inputField}>
-          <input type="text" placeholder='Type a message'/>
+          <input value={newMessage} onChange={e => setNewMessage(e.target.value)} 
+          type="text" placeholder='Type a message'
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' && newMessage) {
+              submitMessage()
+            }
+          }}/>
           <span className={styles.space}></span>
           <div className={styles.sendIcon}>
-            <button>
+            <button disabled={!newMessage} onClick={submitMessage}>
             <Image
             src="/send-icon.png"
             width={25}

@@ -2,11 +2,20 @@ import styles from '../styles/ChatText.module.css';
 import { Data } from './Data';
 import Image from 'next/image';
 import { Context } from './GlobalStates';
-import { useContext } from 'react';
+import { useContext, useRef, useEffect } from 'react';
 
 export default function ChatText(props) {
     const [messages] = useContext(Context);
+    const messageRef = useRef();
+
+    useEffect(() => {
+        scrollToBottom();
+      },[messages])
     
+    const scrollToBottom = () => {
+        messageRef.current?.scrollIntoView({ behavior: 'smooth'})
+      }
+
     return (
         <div className={styles.container}>
             {messages.map((value , index) =>
@@ -23,7 +32,7 @@ export default function ChatText(props) {
                     alt="profile"
                     /> 
                     </div>
-                    <div className={styles.spaceAround} style={{marginTop: value.id !== Data[index+1]?.id ? '15px' : 0}}></div>
+                    <div ref={messageRef} className={styles.spaceAround} style={{marginTop: value.id !== Data[index+1]?.id ? '15px' : 0}}></div>
                 </>
             )}
         </div>
