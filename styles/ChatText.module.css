@@ -1,9 +1,11 @@
 .container {
     width: 500px;
-    /* overflow-y: auto; */
-    /* overflow-x: auto; */
-    height: 68vh;
+    overflow-y: auto;
+    height: 71vh;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 }
 
 .myMessage {
@@ -13,10 +15,10 @@
     border-radius: 10px;
     color: white;
     font-weight: bold;
-    position: relative;
     left: 110px;
-    margin: 10px 0;
+    margin: 5px 0;
     font-size: 14px;
+    position: relative;
 }
 
 .hisMessage {
@@ -24,11 +26,11 @@
     padding: 1px 10px;
     background-color: rgb(226, 242, 247);
     border-radius: 10px;
-    color: black;
+    color: rgb(27, 27, 27);
     font-weight: bold;
     position: relative;
     left: 30px;
-    margin: 10px 0;
+    margin: 5px 0;
     font-size: 14px;
 }
 
@@ -36,4 +38,5 @@
     position: relative;
     left: 220px;
     font-size: 10px;
+    width: 140px;
 }
