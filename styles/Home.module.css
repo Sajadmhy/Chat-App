@@ -3,7 +3,7 @@
 }
 
 .main {
-  min-height: 100vh;
+  min-height: 93vh;
   padding: 2rem 0;
   flex: 1;
   display: flex;
@@ -15,75 +15,63 @@
   display: flex;
   align-items: center;
   width: 500px;
-  justify-content: center;
-  gap: 10px;
-  position: relative;
+  height: 80px;
+  justify-content: flex-start;
   padding: 10px 0;
   border-bottom: 1px solid rgb(211, 211, 211);
-}
-
-.backArrow  {
-  user-select: none;
-  transform: rotate(90deg);
-  margin: 0 10px 0 0;
-  cursor: pointer;
-}
-
-.chatHead p:first-child {
   font-weight: bold;
-  position: absolute;
-  top: 2px;
 }
 
-.chatHead p:nth-child(2) {
-  font-size: 14px;
-  position: absolute;
-  top: 30px;
-}
-
-.dot {
-  width: 10px;
-  height: 10px;
-  background-color: rgb(15, 255, 75);
-  display: inline-block;
-  border-radius: 50%;
-  margin: 0 5px 0 0;
-}
-
-.space {
-  flex: auto;
-}
-
-.threeDots {
-  user-select: none;
-  cursor: pointer;
-}
-
-
-.inputField {
+.card {
   display: flex;
   align-items: center;
   width: 500px;
-  border-top: 1px solid rgb(211, 211, 211);
-  padding: 10px 0 0 0;
+  gap: 10px;
+  margin: 10px 0;
+  cursor: pointer;
 }
 
-.inputField input {
-  border-style: none;
-  width: 450px;
-  height: 40px;
-  margin: 0 0 0 10px;
+.details {
+  display: flex;
+  flex-direction: column;
 }
 
-.inputField input:focus {
-  outline: none;
+.details p {
+  margin: 2px 0;
+  font-weight: bold;
 }
 
-.inputField input::placeholder {
-  color: rgb(175, 175, 175);
-  font-size: 15px;
+.details p:first-child {
+  font-size: 14px;
 }
 
-.sendIcon {
-  user-select: none;
+.details p:nth-child(2) {
+  font-size: 13px;
+}
+
+.details p:nth-child(3) {
+  font-size: 11px;
+  color: gray;
+}
+
+.space {
+  flex: 1;
+}
+
+.blackProfile {
+  width: 60px;
+  height: 60px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.footer a {
+  color: rgb(23, 131, 255);
+  text-decoration: underline;
 }

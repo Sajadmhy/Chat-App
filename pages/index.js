@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import ChatText from '../components/ChatText'
+import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -13,27 +13,23 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <div className={styles.chatHead}>
-          <div className={styles.backArrow}>
-          <Image 
-          src="/back-arrow.png"
-          height={18}
-          width={18}
-          alt="back arrow"
-          />
-          </div>
+         Messages
+        </div>
+        <Link href="/sajad">
+        <div className={styles.card}>
           <Image
           src="/profile.png"
-          height={60}
           width={60}
-          alt="profile picture"
-          property
+          height={60}
+          alt="Sajad"
+          priority
           />
-          <div>
+          <div className={styles.details}>
             <p>Sajad Mahyaei</p>
-            <p><span className={styles.dot}></span>Online</p>
+            <p>Last Message</p>
+            <p>3 days ago</p>
           </div>
           <span className={styles.space}></span>
-          <div className={styles.threeDots}>
           <Image 
           src="/dots.png"
           height={20}
@@ -41,22 +37,30 @@ export default function Home() {
           alt="see more dots"
           priority
           />
-          </div> 
         </div>
-        <ChatText />
-        <div className={styles.inputField}>
-          <input type="text" placeholder='Type a message'/>
-          <span className={styles.space}></span>
-          <div className={styles.sendIcon}>
-            <Image
-            src="/send-icon.png"
-            width={25}
-            height={25}
-            alt="send message icon"
-            />
+          </Link>
+          <Link href="/samuel">
+        <div className={styles.card}>
+          <div className={styles.blackProfile}></div>
+          <div className={styles.details}>
+            <p>Samuel Jr. Berokh</p>
+            <p>Last Message</p>
+            <p>3 days ago</p>
           </div>
+          <span className={styles.space}></span>
+          <Image 
+          src="/dots.png"
+          height={20}
+          width={20}
+          alt="see more dots"
+          priority
+          />
         </div>
+          </Link>
       </main>
+      <footer className={styles.footer}>
+        <div>Made with 💓 by <a href='https://sajad.codes'>Sajad Mahyaei</a></div>
+      </footer>
     </div>
   )
 }
