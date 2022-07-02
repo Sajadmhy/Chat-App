@@ -3,15 +3,18 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 import { Data } from '../components/Data'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { Context } from '../components/GlobalStates'
+import moment from 'moment'
 
 export default function Home() {
+  const [messages] = useContext(Context);
 
   return (
     <div className={styles.container}>
       <Head>
         <title>Chat App</title>
-        <meta name="description" content="Chat-box created with next.js" />
+        <meta name="description" content="Chat App created with Next.js and love" />
         <link rel="icon" href="/chat-favicon.png" />
       </Head>
       <main className={styles.main}>
@@ -29,8 +32,9 @@ export default function Home() {
           />
           <div className={styles.details}>
             <p>Sajad Mahyaei</p>
-            <p>Last Message</p>
-            <p>3 days ago</p>
+            <p>{ messages[messages.length-1].text.length > 60 ?
+             messages[messages.length-1].text.slice(0,50).concat('...') : messages[messages.length-1].text }</p>
+            <p>{moment(messages[messages.length-1].date).diff(moment(), 'days') === 0 ? 'Today' : `${-moment(messages[messages.length-1].date).diff(moment(), 'days')} days ago`} </p>
           </div>
           <span className={styles.space}></span>
           <Image 
@@ -53,8 +57,9 @@ export default function Home() {
           />
           <div className={styles.details}>
             <p>Samuel Jr. Berokh</p>
-            <p>Last Message</p>
-            <p>3 days ago</p>
+            <p>{ messages[messages.length-1].text.length > 60 ?
+             messages[messages.length-1].text.slice(0,50).concat('...') : messages[messages.length-1].text }</p>
+            <p>{moment(messages[messages.length-1].date).diff(moment(), 'days') === 0 ? 'Today' : `${-moment(messages[messages.length-1].date).diff(moment(), 'days')} days ago`} </p>
           </div>
           <span className={styles.space}></span>
           <Image 
