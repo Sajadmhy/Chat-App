@@ -9,6 +9,7 @@ import moment from 'moment'
 
 export default function Home() {
   const [messages] = useContext(Context);
+  const momentFormat = 'hh:mm A DD MMM, YYYY';
 
   return (
     <div className={styles.container}>
@@ -34,7 +35,7 @@ export default function Home() {
             <p>Sajad Mahyaei</p>
             <p>{ messages[messages.length-1].text.length > 60 ?
              messages[messages.length-1].text.slice(0,50).concat('...') : messages[messages.length-1].text }</p>
-            <p>{moment(messages[messages.length-1].date).diff(moment(), 'days') === 0 ? 'Today' : `${-moment(messages[messages.length-1].date).diff(moment(), 'days')} days ago`} </p>
+            <p>{moment(messages[messages.length-1].date , momentFormat).diff(moment(), 'days') === 0 ? 'Today' : `${-moment(messages[messages.length-1].date , momentFormat).diff(moment(), 'days')} days ago`} </p>
           </div>
           <span className={styles.space}></span>
           <Image 
@@ -59,7 +60,7 @@ export default function Home() {
             <p>Samuel Jr. Berokh</p>
             <p>{ messages[messages.length-1].text.length > 60 ?
              messages[messages.length-1].text.slice(0,50).concat('...') : messages[messages.length-1].text }</p>
-            <p>{moment(messages[messages.length-1].date).diff(moment(), 'days') === 0 ? 'Today' : `${-moment(messages[messages.length-1].date).diff(moment(), 'days')} days ago`} </p>
+            <p>{moment(messages[messages.length-1].date, momentFormat).diff(moment(), 'days') === 0 ? 'Today' : `${-moment(messages[messages.length-1].date, momentFormat).diff(moment(), 'days')} days ago`} </p>
           </div>
           <span className={styles.space}></span>
           <Image 

@@ -19,7 +19,7 @@ export default function ChatText(props) {
     return (
         <div className={styles.container}>
             {messages.map((value , index) =>
-                <>
+                <div key={index}>
                     <div key={index} className={value.id === props.id ? styles.myMessage : styles.hisMessage}>
                         <p>{value.text}</p>
                         <p className={styles.date}>{value.date}</p>
@@ -33,7 +33,7 @@ export default function ChatText(props) {
                     /> 
                     </div>
                     <div ref={messageRef} className={styles.spaceAround} style={{marginTop: value.id !== messages[index+1]?.id ? '15px' : 0}}></div>
-                </>
+                </div>
             )}
         </div>
     )

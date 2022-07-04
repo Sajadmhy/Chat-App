@@ -9,12 +9,12 @@ import moment from 'moment'
 
 export default function Home() {
   const [messages, setMessages] = useContext(Context);
-  const [newMessage, setNewMessage] = useState();
+  const [newMessage, setNewMessage] = useState('');
   const id = 1;
 
   const submitMessage = () => {
     const newInput = {
-      id , text: newMessage, date: moment().format('hh:mm A, D MMM YYYY'),
+      id , text: newMessage, date: moment().format('hh:mm A DD MMM, YYYY'),
     }
     const newData = [...messages]
     newData.push(newInput);
