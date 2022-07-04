@@ -11,6 +11,7 @@ export default function Home() {
   const [messages, setMessages] = useContext(Context);
   const [newMessage, setNewMessage] = useState('');
   const id = 2;
+  const momentFormat = 'hh:mm A DD MMM, YYYY';
 
   const submitMessage = () => {
     const newInput = {
@@ -29,7 +30,66 @@ export default function Home() {
         <title>Chat App</title>
       </Head>
       <main className={styles.main}>
-        <div className={styles.chatHead}>
+
+      <div className={styles.messagesList}>
+          
+          <div className={styles.chatHead}>
+           Messages
+          </div>
+          <Link href="/sajad">
+          <div className={styles.card}>
+            <Image
+            src="/profile-sajad.png"
+            width={60}
+            height={60}
+            alt="Sajad"
+            priority
+            />
+            <div className={styles.details}>
+              <p>Sajad Mahyaei</p>
+              <p>{ messages[messages.length-1].text.length > 60 ?
+               messages[messages.length-1].text.slice(0,50).concat('...') : messages[messages.length-1].text }</p>
+              <p>{moment(messages[messages.length-1].date , momentFormat).diff(moment(), 'days') === 0 ? 'Today' : `${-moment(messages[messages.length-1].date , momentFormat).diff(moment(), 'days')} days ago`} </p>
+            </div>
+            <span className={styles.space}></span>
+            <Image 
+            src="/dots.png"
+            height={20}
+            width={20}
+            alt="see more dots"
+            priority
+            />
+          </div>
+            </Link>
+            <Link href="/samuel">
+          <div className={styles.card}>
+          <Image
+            src="/profile-sam.png"
+            width={60}
+            height={60}
+            alt="Samuel"
+            priority
+            />
+            <div className={styles.details}>
+              <p>Samuel Jr. Berokh</p>
+              <p>{ messages[messages.length-1].text.length > 60 ?
+               messages[messages.length-1].text.slice(0,50).concat('...') : messages[messages.length-1].text }</p>
+              <p>{moment(messages[messages.length-1].date, momentFormat).diff(moment(), 'days') === 0 ? 'Today' : `${-moment(messages[messages.length-1].date, momentFormat).diff(moment(), 'days')} days ago`} </p>
+            </div>
+            <span className={styles.space}></span>
+            <Image 
+            src="/dots.png"
+            height={20}
+            width={20}
+            alt="see more dots"
+            priority
+            />
+          </div>
+            </Link>
+  
+            </div>
+        <div className={styles.chatText}>
+         <div className={styles.chatHead}>
           <Link href="/"><div className={styles.backArrow}>
           <Image 
           src="/back-arrow.png"
@@ -81,6 +141,7 @@ export default function Home() {
             />
             </button>
           </div>
+         </div>
         </div>
       </main>
     </div>

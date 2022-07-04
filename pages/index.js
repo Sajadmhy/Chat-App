@@ -19,6 +19,8 @@ export default function Home() {
         <link rel="icon" href="/chat-favicon.png" />
       </Head>
       <main className={styles.main}>
+        <div className={styles.messagesList}>
+          
         <div className={styles.chatHead}>
          Messages
         </div>
@@ -72,6 +74,14 @@ export default function Home() {
           />
         </div>
           </Link>
+
+          </div>
+        <div className={styles.messagesBox}>
+        <svg fill="none" width="120" height="120" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="mb-3"><path d="M3 8V19.2271C3 20.0058 3.85082 20.4857 4.51729 20.0829L7.19371 18.4651C8.13005 17.8992 9.20333 17.6 10.2974 17.6H17C19.2091 17.6 21 15.8091 21 13.6V8C21 5.79086 19.2091 4 17 4H7C4.79086 4 3 5.79086 3 8Z" stroke="grey" strokeWidth="1.5"></path><line x1="7.75" y1="9.25" x2="16.25" y2="9.25" stroke="grey" strokeWidth="1.5" strokeLinecap="round"></line><line x1="7.75" y1="13.25" x2="12.25" y2="13.25" stroke="grey" strokeWidth="1.5" strokeLinecap="round"></line></svg>  
+        <p>Start new message</p>
+        <p>Messages sent after connecting with a mentee/mentor will appear here.</p>
+        <button>Write a message</button>
+        </div>
       </main>
       <footer className={styles.footer}>
         <div>Made with 💓 by <a href='https://sajad.codes'>Sajad Mahyaei</a></div>

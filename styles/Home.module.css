@@ -4,11 +4,16 @@
 
 .main {
   min-height: 93vh;
-  padding: 2rem 0;
-  flex: 1;
+  padding: 2rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.messagesList {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: solid lightgray 1px;
 }
 
 .chatHead {
@@ -17,7 +22,7 @@
   width: 500px;
   height: 80px;
   justify-content: flex-start;
-  padding: 10px 0;
+  padding: 10px 20px;
   border-bottom: 1px solid rgb(211, 211, 211);
   font-weight: bold;
 }
@@ -28,6 +33,7 @@
   width: 500px;
   gap: 10px;
   margin: 10px 0;
+  padding: 0 20px;
   cursor: pointer;
 }
 
@@ -58,6 +64,29 @@
   flex: 1;
 }
 
+.messagesBox {
+  max-width: 500px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.messagesBox p:first-of-type {
+  font-weight: bold;
+}
+
+.messagesBox button {
+  color: white;
+  background-color: black;
+  height: 36px;
+  width: 130px;
+  border-radius: 7px;
+  font-weight: bold;
+  cursor: pointer;
+}
 
 .footer {
   display: flex;
@@ -68,4 +97,11 @@
 .footer a {
   color: rgb(23, 131, 255);
   text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .messagesBox {
+    display: none;
+  }
+
 }
