@@ -7,7 +7,7 @@ import { Context } from '../components/GlobalStates'
 import { useContext, useEffect, useRef, useState } from 'react'
 import moment from 'moment'
 
-export default function Home() {
+export default function Sajad() {
   const [messages, setMessages] = useContext(Context);
   const [newMessage, setNewMessage] = useState('');
   const id = 2;

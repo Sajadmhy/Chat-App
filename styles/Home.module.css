@@ -4,7 +4,7 @@
 
 .main {
   min-height: 93vh;
-  padding: 2rem 2rem;
+  padding: 2rem 0;
   display: flex;
   justify-content: center;
 }
@@ -103,5 +103,26 @@
   .messagesBox {
     display: none;
   }
+  .chatHead, .card {
+    font-size: 12px;
+  }
+  .details p:first-child {
+    font-size: 11px;
+  }
+  
+  .details p:nth-child(2) {
+    font-size: 10px;
+  }
+  .details p:nth-child(3) {
+    font-size: 10px;
+  }
+}
 
+@media screen and (max-width: 600px) {
+  .chatHead, .card {
+    width: 100%;
+  }
+  .space {
+    width: 100px;
+  }
 }

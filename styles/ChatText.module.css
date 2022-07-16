@@ -49,4 +49,29 @@
     width: 120px;
 }
 
+@media screen and (max-width: 600px) {
+    .container {
+        width: 100%;
+    }
+
+    .myMessage {
+        width: 65%;
+        left: 35%;
+        font-size: 11px;
+    }
+
+    .hisMessage {
+        width: 65%;
+        left: 10%;
+        font-size: 11px;
+    }
+
+    .date {
+        width: 40%;
+        left: 60%;
+        font-size: 8px;
+    }
+
+
+}
   
